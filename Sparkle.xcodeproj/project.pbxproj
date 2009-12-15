@@ -1165,6 +1165,7 @@
 		};
 		55F9B5E810C68F8A0099848A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1941D30D94A70100DD942E /* ConfigRelaunchDebug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -1189,6 +1190,7 @@
 		};
 		55F9B5E910C68F8A0099848A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1941D40D94A70100DD942E /* ConfigRelaunchRelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -1213,6 +1215,7 @@
 		};
 		55F9B5EA10C68F8A0099848A /* Release (GC dual-mode; 10.5-only) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1941D40D94A70100DD942E /* ConfigRelaunchRelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1260,6 +1263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1288,6 +1292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1316,6 +1321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";

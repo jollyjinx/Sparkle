@@ -78,6 +78,10 @@
 	err = FSCopyObjectSync(&srcRef, &dstRef, (CFStringRef)mountPointName, NULL, kFSFileOperationSkipSourcePermissionErrors);
 	if (err != noErr) goto reportError;
 	
+	// DMG's created on 10.6 do always have a .HFS+\ Private\ Directory\ Data^M file which is immutable -changing the immutable flag now.
+	NSString	*hiddenSpecialFilenameString = [[[archivePath stringByDeletingLastPathComponent] stringByAppendingPathComponent:mountPointName] stringByAppendingPathComponent:@".HFS+ Private Directory Data\r"];
+	[NSTask launchedTaskWithLaunchPath:@"/usr/bin/chflags" arguments:[NSArray arrayWithObjects:@"-R",@"nouchg",hiddenSpecialFilenameString, nil]];
+	
 	[self performSelectorOnMainThread:@selector(_notifyDelegateOfSuccess) withObject:nil waitUntilDone:NO];
 	goto finally;
 	
